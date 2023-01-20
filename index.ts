@@ -104,31 +104,23 @@ class MyTransformer<T> {
 }
 
 function add2<T extends number>(): MyTransformerFn<T, number> {
-  return function add2(src) {
-    return src + 2;
-  };
+  return (src) => src + 2;
 }
 
 function multiply5<T extends number>(): MyTransformerFn<T, number> {
-  return function multiply5(src) {
-    return src * 5;
-  };
+  return (src) => src * 5;
 }
 
 function subtract3<T extends number>(): MyTransformerFn<T, number> {
-  return function subtract3(src) {
-    return src - 3;
-  };
+  return (src) => src - 3;
 }
 
 function toString<T>(): MyTransformerFn<T, string> {
-  return function toString(src) {
-    return `${src}`;
-  };
+  return (src) => `${src}`;
 }
 
 function log<T>(): MyTransformerFn<T, T> {
-  return function log(src) {
+  return (src) => {
     console.log('log', src);
     return src;
   };
